@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace CourseAssignments
 {
     class Arrays
     {
-        //			Call the method you want to execute.
+        //			Call the method you want to execute. with Console.Read();
         //GetArrayInputs();                          //Task 01
         //SumArrayValues();                           //Task 02
         //GetMaximumAndMinimumValues();               //Task 03
@@ -18,6 +16,9 @@ namespace CourseAssignments
         //GetValuesAndDeleteOne();                    //Task 08
         //GetDuplicateValues();                       //Task 09
         //GetUniqueValues();                          //Task 10
+
+        //Console.Read();
+
         // Task 01
         public static void GetArrayInputs()
         {
@@ -32,13 +33,12 @@ namespace CourseAssignments
                 int.TryParse(Console.ReadLine(), out arrayInputs[i]);
             }
             Console.WriteLine("———————————————————————");
-            int[] arrayInputsRevesed = arrayInputs;
-            Array.Reverse(arrayInputsRevesed);      // Reversing the Array Order
-            for (int k = 0; k < arrayInputsRevesed.Length; k++)
+            int[] arrayInputsReversed = arrayInputs;
+            Array.Reverse(arrayInputsReversed);      // Reversing the Array Order
+            for (int k = 0; k < arrayInputsReversed.Length; k++)
             {
-                Console.WriteLine(arrayInputsRevesed[k]);
+                Console.WriteLine(arrayInputsReversed[k]);
             }
-            Console.Read();
         }
         // Task 02		
         public static void SumArrayValues()
@@ -51,7 +51,6 @@ namespace CourseAssignments
                 int.TryParse(Console.ReadLine(), out array[i]);
             }
             Console.WriteLine("The Sum of array values {0}", array.Sum()); // Using the built-in function Sum in .net array class
-            Console.Read();
         }
         // Task 03
         public static void GetDuplicateValues()
@@ -73,7 +72,6 @@ namespace CourseAssignments
                     duplicatesCounter++;
                 }
             Console.WriteLine("Total duplicates values in the entered values {0}", duplicatesCounter);
-            Console.Read();
         }
         // Task 03
         public static void GetUniqueValues()
@@ -90,7 +88,6 @@ namespace CourseAssignments
             foreach (var key in arrayGroup)
                 if (key.Count() == 1)
                     Console.WriteLine("Number {0} is unique in the array", key.Key);
-            Console.Read();
         }
         // Task 05	
         public static void GetMaximumAndMinimumValues()
@@ -102,9 +99,9 @@ namespace CourseAssignments
                 Console.WriteLine("Enter the value {0} in the array", i + 1);
                 int.TryParse(Console.ReadLine(), out array[i]);
             }
+            // The other solution to make variable maximumValue and assume first value in the is the maximum value then make a for loop and compare the value of each item in the array with our assumed maximumValue if the compared value are bigger than our assumbation then set the maximumValue with the new value. Same procedure to be followed with the Minimum value. 
             Console.WriteLine("The Maximum value you entered equals =  {0}", array.Max());
             Console.WriteLine("The Minimum value you entered equals =  {0}", array.Min());
-            Console.Read();
         }
         // Task 06	
         public static void GetEvenAndOdd()
@@ -123,7 +120,6 @@ namespace CourseAssignments
             }
             Console.WriteLine("The count of even numbers entered =  {0}", even);
             Console.WriteLine("The count of odd numbers entered =  {0}", odd);
-            Console.Read();
         }
         // Task 07
         public static void GetValuesAndDeleteOne()
@@ -154,7 +150,6 @@ namespace CourseAssignments
                 Console.WriteLine("The value in the updated array you at index {0} =  {1}", counterInForEach, index);
                 counterInForEach++;
             }
-            Console.Read();
         }
         // Task 08
         public static void GetAdditionOfTwoArrays()
@@ -199,7 +194,6 @@ namespace CourseAssignments
                 counterInForEach++;
             }
 
-            Console.Read();
         }
         // Task 09
         public static void GetMinimumValueAndItsIndex()
@@ -207,27 +201,26 @@ namespace CourseAssignments
             int[,] array = new int[3, 3];
             int rows = array.GetLength(0);
             int cols = array.GetLength(1);
-            int minmumValue = int.MaxValue;
-            String minmumValueLocation = "";
+            int minimumValue = int.MaxValue;
+            String minimumValueLocation = "";
             for (int i = 0; i < cols; i++)
             {
                 for (int j = 0; j < rows; j++)
                 {
                     Console.WriteLine("Please the value if cell in Column {0} and Row {1}", i, j);
                     int.TryParse(Console.ReadLine(), out array[i, j]);
-                    if (array[i, j] < minmumValue)
+                    if (array[i, j] < minimumValue)
                     {
-                        minmumValue = array[i, j];
-                        minmumValueLocation = "[" + i + ", " + j + "]";
+                        minimumValue = array[i, j];
+                        minimumValueLocation = "[" + i + ", " + j + "]";
                     }
                 }
             }
             Console.WriteLine("The lowest  value in the entered number ={0} \n" +
-                              "The Index of this value in the array  =  {1}", minmumValue, minmumValueLocation);
-            Console.Read();
+                              "The Index of this value in the array  =  {1}", minimumValue, minimumValueLocation);
         }
         // Task 10
-        public static void Get3by3ArrayDiagonalSum()
+        public static void Get3By3ArrayDiagonalSum()
         {
             int sum = 0;
             int[,] array = new int[,]
@@ -245,7 +238,6 @@ namespace CourseAssignments
                 }
             }
             Console.WriteLine("Diagonal summation =  {0}", sum);
-            Console.Read();
         }
     }
 }
