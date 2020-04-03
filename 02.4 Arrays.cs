@@ -7,8 +7,8 @@ namespace CourseAssignments
 {
     class Arrays
     {
-        // Call the method you want to execute.
-        // GetArrayInputs();                          //Task 01
+        //			Call the method you want to execute.
+        //GetArrayInputs();                          //Task 01
         //SumArrayValues();                           //Task 02
         //GetMaximumAndMinimumValues();               //Task 03
         //GetEvenAndOdd();                            //Task 04
@@ -161,7 +161,7 @@ namespace CourseAssignments
         {
             Console.WriteLine("Enter First Array Size");
             int.TryParse(Console.ReadLine(), out int x);
-            Console.WriteLine("Enter Secined Array Size");
+            Console.WriteLine("Enter Second Array Size");
             int.TryParse(Console.ReadLine(), out int y);
             int[] firstArray = new int[x];
             int[] secondArray = new int[y];
@@ -238,7 +238,6 @@ namespace CourseAssignments
             };
             for (int i = 0; i < array.GetLength(0); i++)
             {
-
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (i == j)
