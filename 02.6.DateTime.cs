@@ -8,7 +8,7 @@ namespace DEC_CourseAssignments
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Enter The First Activity Start Date");
+            Console.WriteLine("Enter The First Activity Start Date in dd/mm/yyyy format, e.g. 19/06/2020");
             var provider = CultureInfo.InvariantCulture;
             var userInput = Console.ReadLine();
             var validInput = DateTime.TryParseExact(userInput, "dd/MM/yyyy", provider, DateTimeStyles.None,
